@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Create Listing</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="location" icon="arrow-back"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div text-center>
+    <h1>Please enter booking information</h1>
+    <p>(Enter in format: dd-mm-yyyy)</p>
+  </div>
+
+  <div>
+    <form #form="ngForm">
+      <div>
+        <ion-grid>
+          <ion-row justify-content-center>
+            <ion-col align-self-center>
+
+              <div>
+                  <ion-item>
+                    <ion-input name="start" [(ngModel)]="bookingInfo.dateStart" type="text" placeholder="Arrival">
+                    </ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-input name="end" [(ngModel)]="bookingInfo.dateEnd" type="text" placeholder="Departure">
+                    </ion-input>
+                  </ion-item>
+              </div>
+              <div padding>
+                <ion-button type="submit" (click)="post()">Post</ion-button>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </form>
+  </div>
+</ion-content>
+
+<!-- PROVIDER -->
+<!-- <div>
+                <ion-item>
+                  <ion-input name="name" [(ngModel)]="name" type="text" placeholder="name">
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input name="location" [(ngModel)]="location" type="text" placeholder="Location">
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input name="price" [(ngModel)]="price" type="text" placeholder="Price ($)"></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input name="imgUrl" [(ngModel)]="imgUrl" type="text" placeholder="Image url">
+                  </ion-input>
+                </ion-item>
+              </div> -->

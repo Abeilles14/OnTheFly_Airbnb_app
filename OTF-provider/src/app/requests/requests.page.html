@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar color="dark tint">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/main/tabs/trips" icon="arrow-back"></ion-back-button>
+    </ion-buttons>
+    <ion-title> Booking Requests</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-card class="welcome-card" color="light" *ngFor="let booking of currentBookings; let i=index;">
+
+  <img src={{listingInfo.imgURL}} width='500'>
+  <ion-card-header>
+    <ion-card-subtitle>{{listingInfo.location}}</ion-card-subtitle>
+    <ion-card-title><b>{{listingInfo.title}}</b></ion-card-title>
+    <ion-card-subtitle>
+      Price: {{listingInfo.pricePerNight}} $ CAD Per Night<br>
+      For {{listingInfo.numberOfPeople}} People
+    </ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+    <p>{{listingInfo.description}}</p>
+  </ion-card-content>
+
+<!-- 
+  <ion-card-subtitle margin=35px;>
+    <h3><b>Booker Information</b></h3><br>
+    {{getUserById(currentBookings[i].getUserID()).name}} {{getUserById(currentBookings[i].getUserID()).surname}} <br>
+    {{getUserById(currentBookings[i].getUserID()).email}}<br>
+    {{getUserById(currentBookings[i].getUserID()).phone}}
+  </ion-card-subtitle> -->
+
+  <div *ngIf="accepted">Booking Accepted</div>
+  <div *ngIf="declined">Booking Declined</div>
+  <div padding [hidden]="click" >
+    <ion-button (click)="accept(booking.id)">Accept Booking</ion-button>
+    <ion-button (click)="decline(booking.id)">Decline Booking</ion-button>
+  </div>
+</ion-card>
+
+<!-- 
+
+<ion-content *ngFor="let booking of currentBookings; let i=index;">
+  <div margin=35px;>
+    <h1><b>{{listingInfo.title}}</b></h1>
+    <figure>
+      <img src="{{listingInfo.imgURL}}" width='500'>
+    </figure>
+    <legend>
+      <p><b>{{listingInfo.location}}</b> <br>
+        {{listingInfo.description}} <br>
+        Price: {{listingInfo.pricePerNight}} $ CAD Per Night<br>
+        For {{listingInfo.numberOfPeople}} People </p>
+      <p>
+
+      </p>
+      <p><b>Booker Information</b><br>
+        {{userInfo.name}} {{userInfo.surname}} <br>
+        {{userInfo.email}}<br>
+        {{userInfo.phone}}
+      </p>
+    </legend>
+  </div>
+  <div padding>
+    <ion-button (click)="accept(booking.id)">Accept Booking</ion-button>
+  </div>
+  <div padding>
+    <ion-button (click)="decline(booking.id)">Decline Booking</ion-button>
+  </div>
+</ion-content> -->

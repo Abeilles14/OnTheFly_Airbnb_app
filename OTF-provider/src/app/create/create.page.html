@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Create Listing</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="location" icon="arrow-back"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div text-center>
+    <h1>Please enter booking information</h1>
+    <p>Enter your listing details</p>
+  </div>
+
+  <div>
+    <form #form="ngForm">
+      <div>
+        <ion-grid>
+          <ion-row justify-content-center>
+            <ion-col align-self-center>
+
+              <div>
+                <ion-item>
+                  <ion-input name="title" [(ngModel)]="listingInfo.title" type="text" placeholder="Title">
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input name="location" [(ngModel)]="listingInfo.location" type="text" placeholder="City, Country">
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input name="description" [(ngModel)]="listingInfo.description" type="text" placeholder="Description">
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input name="number" [(ngModel)]="listingInfo.numberOfPeople" type="text" placeholder="Number of people">
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input name = "price" [(ngModel)]="listingInfo.pricePerNight" type="text" placeholder="Price per night">
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input name="imgURL"[(ngModel)]="listingInfo.imgURL" type="text" placeholder="Image URL link">
+                  </ion-input>
+                </ion-item>
+              </div>
+              <div padding>
+                <ion-button type="submit" (click)="post()">Post</ion-button>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </form>
+  </div>
+</ion-content>
+
+<!-- PROVIDER -->
+<!-- <div>
+                <ion-item>
+                  <ion-input name="name" [(ngModel)]="name" type="text" placeholder="name">
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input name="location" [(ngModel)]="location" type="text" placeholder="Location">
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input name="price" [(ngModel)]="price" type="text" placeholder="Price ($)"></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input name="imgUrl" [(ngModel)]="imgUrl" type="text" placeholder="Image url">
+                  </ion-input>
+                </ion-item>
+              </div> -->

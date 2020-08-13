@@ -1,0 +1,108 @@
+<ion-header>
+  <ion-toolbar color="dark tint">
+    <ion-title>
+      Bookings
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card class="welcome-card">
+        <img src="https://www.maisonsduvoyage.com/media/catalog/product/cache/102/image/1010x670/17f82f742ffe127f42dca9de82fb58b1/p/r/preview.plage-cape-town---70658_token_czwvzk4f.jpg"/>
+        <ion-card-header>
+          <ion-card-subtitle>Upcoming Bookings</ion-card-subtitle>
+          <ion-card-title>Booking Requests</ion-card-title>
+        </ion-card-header>
+    
+        <ion-card-content>
+          <p>Create new listings for users to book</p>
+        </ion-card-content>
+      </ion-card>
+  
+  <div padding>
+    <ion-button (click)="navToExplore()">See All Listings</ion-button>
+  </div>
+  <div margin=35px;>
+    <h5><b>Booking Requests</b></h5>
+  </div>
+
+
+  <div>
+    <ion-list *ngFor="let listing of listingsList; let i=index;">
+      <ion-item (click)="navToRequests(listingsList[i]);">
+        <div padding>
+          <ion-avatar slot="start">
+            <img src="{{listingsList[i].imgURL}}">
+          </ion-avatar>
+        </div>
+        <ion-label>
+          <h6><b>{{listingsList[i].title}}</b></h6>
+          <h4>{{listingsList[i].location}} for {{listingsList[i].numberOfPeople}} people</h4>
+          <!-- <p>{{bookingsList[i].dateStart}} to {{bookingsList[i].dateEnd}}</p> -->
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+
+  <!-- <div padding>
+    <ion-button (click)="showPending()">Pending</ion-button>
+    <ion-button (click)="showAccepted()">Accepted</ion-button>
+    <ion-button (click)="showDeclined()">Declined</ion-button>
+  </div> -->
+  <!-- 
+  <div *ngIf="pending">
+    <ion-list *ngFor="let booking of pendingBookings; let i=index;">
+      <script type="text/javascript"> setCurrentListing(pendingBookings[i].listingID)</script>
+      <ion-item (click)="navToRequests(pendingBookings[i], currentListing);">
+        <div padding>
+          <ion-avatar slot="start">
+            <img src="{{currentListing.imgURL}}">
+          </ion-avatar>
+        </div>
+        <ion-label>
+          <h6><b>{{currentListing.title}}</b></h6>
+          <h4>{{currentListing.location}} for {{currentListing.numberOfPeople}} people</h4>
+          <p>{{bookingsList[i].dateStart}} to {{bookingsList[i].dateEnd}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <div *ngIf="accepted">
+    <ion-list *ngFor="let booking of acceptedBookings; let i=index;">
+      <script type="text/javascript"> setCurrentListing(acceptedBookings[i].listingID)</script>
+      <ion-item (click)="navToRequests(acceptedBookings[i], currentListing);">
+        <div padding>
+          <ion-avatar slot="start">
+            <img src="{{currentListing.imgURL}}">
+          </ion-avatar>
+        </div>
+        <ion-label>
+          <h6><b>{{currentListing.title}}</b></h6>
+          <h4>{{currentListing.location}} for {{currentListing.numberOfPeople}} people</h4>
+          <p>{{bookingsList[i].dateStart}} to {{bookingsList[i].dateEnd}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <div *ngIf="declined" >
+    <ion-list *ngFor="let booking of declinedBookings; let i=index;">
+      <script type="text/javascript"> setCurrentListing(bookingsList[i].listingID)</script>
+      <ion-item (click)="navToRequests(declinedBookings[i], currentListing);">
+        <div padding>
+          <ion-avatar slot="start">
+            <img src="{{currentListing.imgURL}}">
+          </ion-avatar>
+        </div>
+        <ion-label>
+          <h6><b>{{currentListing.title}}</b></h6>
+          <h4>{{currentListing.location}} for {{currentListing.numberOfPeople}} people</h4>
+          <p>{{bookingsList[i].dateStart}} to {{bookingsList[i].dateEnd}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div> -->
+
+</ion-content>

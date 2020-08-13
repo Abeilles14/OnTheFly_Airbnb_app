@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="dark tint">
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="/main/tabs/explore" icon="arrow-back"></ion-back-button>
+        </ion-buttons>
+    <ion-title>Rentals</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <!-- <div padding>
+        <ion-button (click)="navToCreate()">Book Now</ion-button>
+      </div> -->
+  <div margin=35px;>
+    <h1><b>{{listing.title}}</b></h1>
+    <figure>
+      <img src="{{listing.imgURL}}" width='500'>
+    </figure>
+    <legend>
+      <p><b>{{listing.location}}</b> <br>
+        {{listing.description}} <br>
+        Price: {{listing.pricePerNight}} $ CAD Per Night<br>
+        {{listing.numberOfPeople}} Rooms Available</p>
+    </legend>
+  </div>
+</ion-content>

@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="dark tint">
+    <ion-title class=card-title>Explore</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card class="welcome-card">
+    <img src="http://goskialberta.com/wp-content/uploads/2014/12/freeride1.jpg"
+      alt="" />
+    <ion-card-header>
+      <ion-card-subtitle>Listings</ion-card-subtitle>
+      <ion-card-title>Explore</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>Explore available listings</p>
+    </ion-card-content>
+  </ion-card>
+  <!--  PROVIDER!!!
+  <div padding>
+    <ion-button (click)="navigateToCreate()">New Listing</ion-button>
+  </div> -->
+
+  <div padding>
+    <ion-button (click)="navToCreate()">Create a Listing</ion-button>
+    <ion-button (click)="navToCreate()">My Listings</ion-button>
+  </div>
+  <ion-list-header>
+    <ion-label>
+      <h2>All Listings</h2></ion-label>
+  </ion-list-header>
+  <ion-list *ngFor="let listing of listingsList let i=index;" (click)="navToRentals(listingsList[i]);">
+
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="{{listing.imgURL}}">
+      </ion-avatar>
+      <ion-label>
+        <h6><b>{{listingsList[i].title}}</b></h6>
+        <h4>{{listingsList[i].pricePerNight}} $ CAD Per Night</h4>
+        <p>{{listingsList[i].location}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

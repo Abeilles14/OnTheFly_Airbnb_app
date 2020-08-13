@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Bookings
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="welcome-card">
+    <img src="https://www.maisonsduvoyage.com/media/catalog/product/cache/102/image/1010x670/17f82f742ffe127f42dca9de82fb58b1/p/r/preview.plage-cape-town---70658_token_czwvzk4f.jpg"/>
+    <ion-card-header>
+      <ion-card-subtitle>Upcoming Bookings</ion-card-subtitle>
+      <ion-card-title>Booking Requests</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>Create new listings for users to book</p>
+    </ion-card-content>
+  </ion-card>
+  <div padding>
+    <ion-button (click)="navToExplore()">Explore Houses</ion-button>
+  </div>
+  <div margin=35px;>
+    <h5><b>Upcoming Trips</b></h5>
+  </div>
+
+  <ion-list *ngFor="let booking of bookingsList let i=index;" (click)="navToRentals(listingsList[i]);">
+
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="{{listingsList[i].imgURL}}">
+      </ion-avatar>
+      <ion-label>
+          <h6><b>{{listingsList[i].location}}</b></h6>
+          <h4>{{bookingsList[i].dateStart}} to {{bookingsList[i].dateEnd}}</h4>
+        </ion-label>
+    </ion-item>
+  </ion-list>
+
+
+
+  <!-- <div margin=35px;>
+    <ion-list *ngFor="let rental of rentals">
+      <ion-item href="rentals">
+        <ion-avatar slot="start">
+          <img src="https://back-to-lisbon.webnode.com/_files/200000035-d03b7d133f/room6-0.jpg">
+        </ion-avatar>
+        <ion-label>
+          <h6><b>06/07/2019</b></h6>
+          <h4>Lisbon</h4>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div> -->
+
+</ion-content>

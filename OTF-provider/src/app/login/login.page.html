@@ -1,0 +1,45 @@
+<ion-header >
+  <ion-toolbar color ="dark">
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div text-center>
+    <h1>Welcome</h1>
+  </div>
+  <form #form="ngForm" (ngSubmit)="login()">
+    <ion-grid>
+      <ion-row justify-content-center>
+        <ion-col align-self-center>
+
+          <div padding>
+            <ion-item>
+              <ion-input name="email" [(ngModel)]="email" type="text" placeholder="Email"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input name="password" [(ngModel)]="password" type="password"  placeholder="Password"></ion-input>
+            </ion-item>
+          </div>
+          <div padding>
+            <p>{{this.messageFromBackend}}</p>
+            <button ion-button full type="submit" (click)="login()">Login</button>
+            <!--For now on click go to explore-->
+          </div>
+          <!--OnClick didn't work >:( : use click!-->
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+  <div text-center>
+    <a href="registration">
+      <h6>Sign Up</h6>
+    </a>
+    <!--redirect towards sign up page-->
+    <a href="#">
+      <h6>Forgot Password?</h6>
+    </a>
+    <!--redirect towards pw recovery page-->
+  </div>
+</ion-content>

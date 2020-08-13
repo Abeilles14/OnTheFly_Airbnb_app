@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="dark tint">
+    <ion-title>My Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div margin=35px;>
+    <div style="display: inline-block;">
+      <ion-avatar>
+        <img src="https://www.thredbo.com.au/wp-content/uploads/2018/03/07.21.17-Powder-1W6A0690-1500x900.jpg">
+      </ion-avatar>
+    </div>
+    <h1 text-align:left><b>{{userInfo.name}} {{userInfo.surname}}</b></h1>
+    <h6>{{userInfo.role.toUpperCase()}}</h6>
+  </div>
+  <hr>
+  <div margin=35px;>
+    <h4><b>About</b></h4>
+    <ul>
+      <li>{{userInfo.email}}</li>
+      <li>{{userInfo.phone}}</li>
+      <li>Joined in 2019</li>
+    </ul>
+  </div>
+  <hr>
+  <div margin=35px;>
+    <h4><b>666 Reviews</b></h4>
+    <h6><b>Karen</b></h6>
+    <p>Lovely person to go on adventures with.</p>
+    <h6><b>John</b></h6>
+    <p>It was great hosting {{userInfo.name}}, had great stories.</p>
+  </div>
+</ion-content>

@@ -1,0 +1,58 @@
+<ion-header >
+  <ion-toolbar color ="dark">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="login" icon="arrow-back"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Registration</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div text-center>
+    <h1>Please enter your information</h1>
+  </div>
+
+  <div>
+    <form #form="ngForm">
+      <div>
+        <ion-grid>
+          <ion-row justify-content-center>
+            <ion-col align-self-center>
+
+              <div>
+                <ion-item>
+                  <ion-input name="firstname" [(ngModel)]="creds.name" type="text" placeholder="First Name">
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input name="lastname" [(ngModel)]="creds.surname" type="text" placeholder="Last Name">
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input name="email" [(ngModel)]="creds.email" type="text" placeholder="Email"></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input name="password" [(ngModel)]="creds.password" type="password"  placeholder="Password">
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input name="phone" [(ngModel)]="creds.phone" type="text" placeholder="Phone"></ion-input>
+                </ion-item>
+              </div>
+
+              <div padding>
+                <ion-button type="submit" (click)="register()">Register</ion-button>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </form>
+    <div text-center>
+      <a href="login">
+        <h6>I already have an account</h6>
+      </a>
+    </div>
+  </div>
+
+</ion-content>

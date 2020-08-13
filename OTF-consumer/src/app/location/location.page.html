@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="dark tint">
+    <ion-title class = card-title>Popular Locations</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- <ion-navbar color="primary">
+  <button ion-button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>Popular Locations</ion-title>
+</ion-navbar> -->
+
+<ion-toolbar color="dark">
+  <ion-searchbar></ion-searchbar>
+</ion-toolbar>
+
+<ion-content class="card-background-page">
+
+  <ion-card (click) = navTo()>
+    <img name="Lisbon" src="https://api-abroad.sfo2.cdn.digitaloceanspaces.com/images/_1200x675_crop_center-center_82_line/portugal-lisbon-city-at-sunset-84824617-small.jpg" />
+    <div class="card-title">Lisbon</div>
+    <div class="card-subtitle">Portugal</div>
+  </ion-card>
+
+<ion-card (click) = navTo()>
+    <img name="Cape Town" src="https://bokunprod.imgix.net/255f5789-f4db-43f2-8325-04750c5d437a.jpg?w=470&h=313&auto=format&q=60&fit=crop&crop=edges" />
+    <div class="card-title">Cape Town</div>
+    <div class="card-subtitle">United States</div>
+  </ion-card>
+
+  <ion-card (click) = navTo()>
+    <img name="Amsterdam" src="https://upload.wikimedia.org/wikipedia/commons/b/be/KeizersgrachtReguliersgrachtAmsterdam.jpg" />
+    <div class="card-title">Amsterdam</div>
+    <div class="card-subtitle">Netherlands</div>
+  </ion-card>
+
+  <ion-card (click) = navTo()>
+    <img name="San Fransisco" src="https://cdn.vox-cdn.com/thumbor/RVhobHgNC4xy7NSqXvVs13OdJIk=/0x0:4000x4000/1200x800/filters:focal(1680x1680:2320x2320)/cdn.vox-cdn.com/uploads/chorus_image/image/55649931/IM_Photo5.0.jpg" />
+    <div class="card-title">San Francisco</div>
+    <div class="card-subtitle">United States</div>
+  </ion-card>
+
+  <ion-card (click) = navTo()>
+      <img name="All Listings" src="https://media.tacdn.com/media/attractions-splice-spp-674x446/06/ef/af/7a.jpg" />
+      <div class="card-title">All Listings</div>
+      <div class="card-subtitle">152 Listings</div>
+    </ion-card>
+  
+
+</ion-content>
